@@ -1,0 +1,18 @@
+$sender-color: skyblue;
+$receiver-color: darken(white, 30%);
+$chat-color: white;
+
+.chats {
+  border-radius: 10px;
+  padding: 5px 10px;
+}
+
+.chat-from {
+  background-color: $sender-color;
+  color: $chat-color;
+}
+
+.chat-to {
+  background-color: $receiver-color;
+  color: $chat-color;
+}
