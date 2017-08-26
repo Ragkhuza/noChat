@@ -26,4 +26,8 @@ Auth::routes();
 
 Route::get('/home', 'HomeController@index')->name('home');
 
-Route::get('/home/chats', 'HomeController@chats');
+Route::get('messages/refresh', 'HomeController@refresh');
+
+Route::get('messages/{id}', 'HomeController@messages');
+
+Route::post('/home/send', 'HomeController@sendMessage');

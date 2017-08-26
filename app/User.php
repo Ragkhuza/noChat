@@ -4,6 +4,7 @@ namespace App;
 
 use Illuminate\Notifications\Notifiable;
 use Illuminate\Foundation\Auth\User as Authenticatable;
+use Illuminate\Support\Facades\DB;
 
 class User extends Authenticatable
 {
@@ -26,4 +27,24 @@ class User extends Authenticatable
     protected $hidden = [
         'password', 'remember_token',
     ];
+
+/*    public function chat()
+    {
+        return $this->hasMany('App\Chat', 'to');
+    } */
+    public static function chat($user, $id)
+    {
+    return DB::table('chats')->where([
+        ['to', $user],
+        ['from', $id],
+        ])->orWhere([
+        ['to', $id],
+        ['from', $user],
+    ])->get();
+    }
+
+    public function send($id, $message)
+    {
+
+    }
 }

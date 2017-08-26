@@ -8350,9 +8350,24 @@ button.close {
   }
 }
 
+.chatBox {
+  overflow-y: scroll;
+  max-height: 500px;
+}
+
 .chats {
   border-radius: 10px;
-  padding: 5px 10px;
+  padding: 4px 10px;
+  max-width: 200px;
+  text-align: justify;
+  margin: 3px 0;
+}
+
+.chats p {
+  width: 100%;
+  display: inline-block;
+  overflow-wrap: break-word;
+  word-wrap: break-word;
 }
 
 .chat-from {
